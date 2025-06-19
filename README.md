@@ -11,8 +11,6 @@ AutoSentry/
 │   ├── app.py                     # Flask backend server
 │   ├── model.py                   # Anomaly detection and dataset reading logic
 │   ├── requirements.txt           # Python dependencies
-├── dataset/
-│   └── sensor_data.txt.zip        # Intel Berkeley Research Lab Sensor Data (without header)
 ├── smart_contract/
 │   ├── AutoSentry.sol             # Solidity smart contract
 │   └── deploy_script.js           # Deployment script (using Hardhat/Ethers.js)
@@ -27,10 +25,9 @@ AutoSentry/
 ## Implementation Details
 
 - **Data Collection:**  
-  A dataset file (`dataset/sensor_data.txt.zip`) contains historical sensor readings with columns:  
-  `date (yyyy-mm-dd)`, `time (hh:mm:ss.xxx)`, `epoch (int)`, `moteid (int)`, `temperature (real)`, `humidity (real)`, `light (real)`, `voltage (real)`.
-  To reduce repository size, the sensor dataset is compressed in `sensor_data.txt.zip`.  
-  The backend automatically extracts the file on first run — no manual action required.  
+  Search for **Intel Berkeley Research Lab Sensor Data** on **Kaggle** for the dataset which is without header.
+  The dataset contains historical sensor readings with columns:  
+  `date (yyyy-mm-dd)`, `time (hh:mm:ss.xxx)`, `epoch (int)`, `moteid (int)`, `temperature (real)`, `humidity (real)`, `light (real)`, `voltage (real)`. 
   The backend randomly selects a row from this file to simulate real-time data ingestion.
 
 - **Anomaly Detection:**  
